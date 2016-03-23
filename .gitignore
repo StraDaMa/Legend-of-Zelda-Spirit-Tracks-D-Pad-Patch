@@ -1,0 +1,20 @@
+#backups
+backup
+#unpacked game
+#ignore all but build.bat
+unpack/data
+unpack/overlay
+unpack/arm9.bin
+unpack/arm7.bin
+unpack/banner.bin
+unpack/header.bin
+unpack/y7.bin
+unpack/y9.bin
+#sym files
+*.sym
+#NDS Games
+*.nds
+#temp build files
+*_compressed.bin
+#ignore patches
+*.xdelta
