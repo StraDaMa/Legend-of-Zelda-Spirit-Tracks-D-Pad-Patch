@@ -27,4 +27,4 @@ Place a copy of Legend of Zelda Spirit Tracks in the unpack folder and name it "
 
 Compatibility
 -------------
-This patch has only been tested with the US release of Spirit tracks. Support for other regions hasn't been tested so it may or may not work.
+This patch has only been tested with the US and EU release of Spirit tracks. Support for other regions hasn't been tested so it may or may not work.

@@ -4,7 +4,7 @@ bl util_get_keys_held
 tst r6,GBAKEY_SELECT
 ;If select is pressed no movement
 bne @@endroutine
-ands r1,r6,0xF0
+ands r1,r6,GBAKEY_DIRECTION
 mov r3,0x07*0x04;7 entries 2*2 bytes each
 ldr r2, =@@dpad_movement_angle_pool
 @@key_lookup_start:
@@ -23,7 +23,7 @@ add r3,0x02
 ldrh r1, [r2,r3];get angle for direction
 
 mov r0,r8
-bl 0x02078678;gets map angle?
+rbl 0x02078678,0x02078698;gets map angle?
 add r1,r0,r1
 
 strh r1, [r4,0x44]
@@ -33,7 +33,7 @@ strh r2, [r4,0x5C]
 strh r1, [r4,0x46]
 ldmfd r13!,r0-r7,r15
 @@endroutine:
-bl 0x02096AD4;opcode being overwritten
+rbl 0x02096AD4,0x02096AF4;opcode being overwritten
 @@end2:
 ldmfd r13!,r0-r7,r15
 

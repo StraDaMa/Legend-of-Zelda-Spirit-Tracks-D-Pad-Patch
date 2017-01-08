@@ -7,7 +7,7 @@ echo Preparing source files
 cd unpack
 ndstool.exe -x input.nds -9 arm9.bin -7 arm7.bin -y9 y9.bin -y7 y7.bin -d data -y overlay -t banner.bin -h header.bin
 cd ..\
-makearm9.exe -x .\unpack\arm9.bin arm9_original.bin
+makearm9.exe -x .\unpack\arm9.bin arm9_original.bin arm9_header.bin
 blz.exe -d arm9_original.bin
 copy .\unpack\overlay\overlay_0000.bin .\overlay_0000_original.bin
 copy .\unpack\overlay\overlay_0017.bin .\overlay_0017_original.bin

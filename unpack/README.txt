@@ -21,7 +21,7 @@ Apply Patch using the xdelta command line:
 
 xdelta.exe -d -s (old_file) (delta_file) (decoded_new_file)
 
-old_file should be a copy of Legend of Zelda Spirit Tracks US
+old_file should be a copy of Legend of Zelda Spirit Tracks US/EU depending on patch
 delta_file is the patch (zelda_spirit_tracks_dpad.xdelta)
 decoded_new_file is the filename after patching
 
@@ -43,5 +43,5 @@ camera angles (such as Tower of Spirits)
 I tried out the patch a bit in the beginning and end of the game
 and it doesn't seem to break anything. But I haven't checked the
 entire game/story so I don't know if it breaks anything throughout.
-You can let me know about any errors or bugs at 
+You can let me know about any errors or bugs at
 griegamaster@gmail.com

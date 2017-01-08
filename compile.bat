@@ -3,11 +3,14 @@ if not exist .\unpack\data (
   call prepare.bat
   if errorlevel 1 exit 1
 )
+regionchecker.exe .\unpack\header.bin
+set gameregion=%errorlevel%
+if %errorlevel% equ -1 exit 1
 
-armips compile.asm -sym ".\unpack\zelda_spirit_tracks_dpad.sym"
+armips compile.asm -sym ".\unpack\zelda_spirit_tracks_dpad.sym" -equ current_region %gameregion%
 blz -eo arm9_compressed.bin
 
-makearm9.exe -c "arm9_compressed.bin" "unpack\arm9.bin"
+makearm9.exe -c "arm9_compressed.bin" "arm9_header.bin" "unpack\arm9.bin"
 
 blz -eo overlay_0000_compressed.bin
 copy overlay_0000_compressed.bin .\unpack\overlay\overlay_0000.bin

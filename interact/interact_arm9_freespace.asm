@@ -11,18 +11,18 @@ mov r0,r8
 add r1,r13,0x00
 mov r2,r5
 mov r3,r6
-bl 0x01FFD43C;write x,y positions to r1
+rbl 0x01FFD43C,0x01FFD43C;write x,y positions to r1
 ;r13 now has the x,y positions of link
 ldrh r6, [r13,0x00]
 ldrh r7, [r13,0x02]
 ldrh r1, [r4,0x44];get angle youre facing
 
 mov r0,r8
-bl 0x02078678;gets map angle?
+rbl 0x02078678,0x02078698;gets map angle?
 add r1,r0,r1;add map angle to current angle
 
 asr r1,r1,0x04
-ldr r2,=0x0203E93C;trig table
+rldr r2,0x0203E93C,0x0203E964;trig table
 add r2, r2, r1, lsl 0x02
 ldrsh r0, [r2,0x02]
 ldrsh r1, [r2,0x00]
@@ -37,7 +37,7 @@ strh r7, [r4,0x10]
 ; strh r1, [r4,0x16]
 mov r0,r4
 mov r1,0x02
-bl 0x02014230;seems to be required for input
+rbl 0x02014230,0x02014230;seems to be required for input
 @@endroutine:
 add r13,r13,0x10
 mov r0,r8
