@@ -18,3 +18,6 @@ unpack/y9.bin
 *_compressed.bin
 #ignore patches
 *.xdelta
+#ignore temp files
+arm9/
+temp/
